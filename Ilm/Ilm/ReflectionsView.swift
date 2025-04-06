@@ -13,6 +13,8 @@ struct ReflectionsView: View {
     }
 }
 
-#Preview {
-    ReflectionsView()
+struct ReflectionsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReflectionsView()
+    }
 }

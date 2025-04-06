@@ -13,6 +13,8 @@ struct FavouritesView: View {
     }
 }
 
-#Preview {
-    FavouritesView()
+struct FavouritesView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavouritesView()
+    }
 }
