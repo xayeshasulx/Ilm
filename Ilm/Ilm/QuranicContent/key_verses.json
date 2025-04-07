@@ -355,6 +355,12 @@
                     "arabic": "وَأَلَّفَ بَيۡنَ قُلُوبِهِمۡۚ لَوۡ أَنفَقۡتَ مَا فِي ٱلۡأَرۡضِ جَمِيعٗا مَّآ أَلَّفۡتَ بَيۡنَ قُلُوبِهِمۡ وَلَٰكِنَّ ٱللَّهَ أَلَّفَ بَيۡنَهُمۡۚ إِنَّهُۥ عَزِيزٌ حَكِيمٞ",
                     "transliteration": "Waallafa bayna quloobihim law anfaqta ma fee alardi jameeAAan ma allafta bayna quloobihim walakinna Allaha allafa baynahum innahu AAazeezun hakeem",
                     "translation": "And brought together their hearts. If you had spent all that is in the earth, you could not have brought their hearts together; but Allah brought them together. Indeed, He is Exalted in Might and Wise."
+                },
+                {
+                    "title": "8:70 | Allah Will Give You Better",
+                    "arabic": "يَٰٓأَيُّهَا ٱلنَّبِيُّ قُل لِّمَن فِيٓ أَيۡدِيكُم مِّنَ ٱلۡأَسۡرَىٰٓ إِن يَعۡلَمِ ٱللَّهُ فِي قُلُوبِكُمۡ خَيۡرٗا يُؤۡتِكُمۡ خَيۡرٗا مِّمَّآ أُخِذَ مِنكُمۡ وَيَغۡفِرۡ لَكُمۡۚ وَٱللَّهُ غَفُورٞ رَّحِيمٞ",
+                    "transliteration": "Ya-ayyuha annabiyyu qul liman fee aydeekum mina alasra in yaAAlami Allahu fee quloobikum khayran yutikum khayran mimma okhitha minkum wayaghfir lakum wallahu ghafoorun raheem",
+                    "translation": "O Prophet, say to whoever is in your hands of the captives, \"If Allah knows [any] good in your hearts, He will give you [something] better than what was taken from you, and He will forgive you; and Allah is Forgiving and Merciful.\""
                 }
               ]
             },
@@ -721,6 +727,12 @@
                     "arabic": "إِنَّ ٱلسَّاعَةَ ءَاتِيَةٌ أَكَادُ أُخۡفِيهَا لِتُجۡزَىٰ كُلُّ نَفۡسِۭ بِمَا تَسۡعَىٰ",
                     "transliteration": "Inna assaAAata atiyatun akadu okhfeeha litujza kullu nafsin bima tasAAa",
                     "translation": "Indeed, the Hour is coming - I almost conceal it - so that every soul may be recompensed according to that for which it strives."
+                },
+                {
+                    "title": "20:46 | Fear Not",
+                    "arabic": "قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ",
+                    "transliteration": "Qala la takhafa innanee maAAakuma asmaAAu waara",
+                    "translation": "[Allah] said, \"Fear not. Indeed, I am with you both; I hear and I see.\""
                 },
                 {
                     "title": "20:124 | Consequence of neglecting the Quran",
@@ -2487,10 +2499,16 @@
               "surah": "93. Ad-Duhaa",
               "posts": [
                 {
-                    "title": "93:11 | Don't conceal blessings",
-                    "arabic": "وَأَمَّا بِنِعۡمَةِ رَبِّكَ فَحَدِّثۡ",
-                    "transliteration": "Waamma biniAAmati rabbika fahaddith",
-                    "translation": "But as for the favor of your Lord, report [it]."
+                    "title": "93:3 | Allah Is With You",
+                    "arabic": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَ"
+                    "transliteration": "Ma waddaAAaka rabbuka wama qala"
+                    "translation": "Your Lord has not taken leave of you, [O Muhammad], nor has He detested [you]."
+                },
+                {
+                    "title": "93:7 | Divine Guidance",
+                    "arabic": "وَوَجَدَكَ ضَآلّٗا فَهَدَىٰ",
+                    "transliteration": "Wawajadaka dallan fahada"
+                    "translation": "And He found you lost and guided [you],"
                 }
               ]
             },

@@ -1,0 +1,722 @@
+[
+  {
+    "arabic": "اللّٰه",
+    "translation": "Allah",
+    "transliteration": "Allah",
+    "occurrences": "This occurs 2550 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلشَّيْطَٰن",
+    "translation": "Satan",
+    "transliteration": "ash-Shayṭān",
+    "occurrences": "This occurs 88 times in the Qur'an."
+  },
+  {
+    "arabic": "هُوَ",
+    "translation": "He",
+    "transliteration": "huwa",
+    "occurrences": "This occurs 481 times in the Qur'an."
+  },
+  {
+    "arabic": "هُمْ",
+    "translation": "They",
+    "transliteration": "hum",
+    "occurrences": "This occurs 444 times in the Qur'an."
+  },
+  {
+    "arabic": "أَنْتَ",
+    "translation": "You (singular)",
+    "transliteration": "anta",
+    "occurrences": "This occurs 81 times in the Qur'an."
+  },
+  {
+    "arabic": "خَيْرٌ",
+    "translation": "Good",
+    "transliteration": "khayrun",
+    "occurrences": "This occurs 180 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱسْمٌ",
+    "translation": "Name",
+    "transliteration": "ismun",
+    "occurrences": "This occurs 19 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلرَّحْمٰنُ",
+    "translation": "The Most Gracious",
+    "transliteration": "ar-Rahmaan",
+    "occurrences": "This occurs 57 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلرَّحِيمُ",
+    "translation": "The Most Merciful",
+    "transliteration": "ar-Raheem",
+    "occurrences": "This occurs 115 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلْحَمْدُ",
+    "translation": "All Praise",
+    "transliteration": "al-hamdu",
+    "occurrences": "This occurs 38 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلْعَٰلَمِينَ",
+    "translation": "The Worlds",
+    "transliteration": "al-‘aalameen",
+    "occurrences": "This occurs 73 times in the Qur'an."
+  },
+  {
+    "arabic": "مُسْلِمٌ",
+    "translation": "Muslim",
+    "transliteration": "muslimun",
+    "occurrences": "This occurs 39 times in the Qur'an."
+  },
+  {
+    "arabic": "مُؤْمِنٌ",
+    "translation": "Believer",
+    "transliteration": "mu’minun",
+    "occurrences": "This occurs 49 times in the Qur'an."
+  },
+  {
+    "arabic": "مُشْرِكٌ",
+    "translation": "Polytheist",
+    "transliteration": "mushrikun",
+    "occurrences": "This occurs 37 times in the Qur'an."
+  },
+  {
+    "arabic": "كَافِرٌ",
+    "translation": "Disbeliever",
+    "transliteration": "kaafirun",
+    "occurrences": "This occurs 152 times in the Qur'an."
+  },
+  {
+    "arabic": "صَالِحٌ",
+    "translation": "Righteous",
+    "transliteration": "saaliḥun",
+    "occurrences": "This occurs 62 times in the Qur'an."
+  },
+  {
+    "arabic": "يَوْمٌ",
+    "translation": "Day",
+    "transliteration": "yawm",
+    "occurrences": "This occurs 475 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلدِّينُ",
+    "translation": "The Religion",
+    "transliteration": "ad-deen",
+    "occurrences": "This occurs 92 times in the Qur'an."
+  },
+  {
+    "arabic": "إِيَّاكَ",
+    "translation": "You Alone",
+    "transliteration": "iyyāka",
+    "occurrences": "This occurs 5 times in the Qur'an."
+  },
+  {
+    "arabic": "رَبٌّ",
+    "translation": "Lord",
+    "transliteration": "rabbun",
+    "occurrences": "This occurs 978 times in the Qur'an."
+  },
+  {
+    "arabic": "مَالِكٌ",
+    "translation": "Master",
+    "transliteration": "maalik",
+    "occurrences": "This occurs 4 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلصِّرَٰطَ",
+    "translation": "The Path",
+    "transliteration": "aṣ-ṣirāṭa",
+    "occurrences": "This occurs 45 times in the Qur'an."
+  },
+  {
+    "arabic": "مُسْتَقِيمٌ",
+    "translation": "Straight",
+    "transliteration": "mustaqeem",
+    "occurrences": "This occurs 38 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلَّذِينَ",
+    "translation": "Those Who",
+    "transliteration": "alladhīna",
+    "occurrences": "This occurs 1224 times in the Qur'an."
+  },
+  {
+    "arabic": "غَيْرِ",
+    "translation": "Other than / Not",
+    "transliteration": "ghayri",
+    "occurrences": "This occurs 33 times in the Qur'an."
+  },
+  {
+     "arabic": "لَا",
+     "translation": "No / Not",
+     "transliteration": "lā",
+     "occurrences": "This occurs 1749 times in the Qur'an."
+   },
+   {
+     "arabic": "إِلَّا",
+     "translation": "Except",
+     "transliteration": "illā",
+     "occurrences": "This occurs 329 times in the Qur'an."
+   },
+   {
+     "arabic": "إِنَّ",
+     "translation": "Indeed",
+     "transliteration": "inna",
+     "occurrences": "This occurs 1340 times in the Qur'an."
+   },
+   {
+     "arabic": "أَنَّ",
+     "translation": "That",
+     "transliteration": "anna",
+     "occurrences": "This occurs 869 times in the Qur'an."
+   },
+   {
+     "arabic": "كَانَ",
+     "translation": "He was",
+     "transliteration": "kāna",
+     "occurrences": "This occurs 1369 times in the Qur'an."
+   },
+   {
+     "arabic": "قَالَ",
+     "translation": "He said",
+     "transliteration": "qāla",
+     "occurrences": "This occurs 1728 times in the Qur'an."
+   },
+   {
+     "arabic": "قُلْ",
+     "translation": "Say!",
+     "transliteration": "qul",
+     "occurrences": "This occurs 332 times in the Qur'an."
+   },
+   {
+     "arabic": "ءَامَنُوا",
+     "translation": "They believed",
+     "transliteration": "āmanū",
+     "occurrences": "This occurs 537 times in the Qur'an."
+   },
+   {
+     "arabic": "عَمِلُوا",
+     "translation": "They did",
+     "transliteration": "ʿamilū",
+     "occurrences": "This occurs 360 times in the Qur'an."
+   },
+   {
+     "arabic": "أُو۟لَٰٓئِكَ",
+     "translation": "Those",
+     "transliteration": "ulā’ika",
+     "occurrences": "This occurs 121 times in the Qur'an."
+  },
+  {
+    "arabic": "فِى",
+    "translation": "In",
+    "transliteration": "fī",
+    "occurrences": "This occurs 1700 times in the Qur'an."
+  },
+  {
+    "arabic": "إِلَىٰ",
+    "translation": "To / Towards",
+    "transliteration": "ilā",
+    "occurrences": "This occurs 1095 times in the Qur'an."
+  },
+  {
+    "arabic": "مِنْ",
+    "translation": "From",
+    "transliteration": "min",
+    "occurrences": "This occurs 3226 times in the Qur'an."
+  },
+  {
+    "arabic": "عَلَىٰ",
+    "translation": "On / Upon",
+    "transliteration": "ʿalā",
+    "occurrences": "This occurs 1168 times in the Qur'an."
+  },
+  {
+    "arabic": "عَن",
+    "translation": "About / From",
+    "transliteration": "ʿan",
+    "occurrences": "This occurs 316 times in the Qur'an."
+  },
+  {
+    "arabic": "مَعَ",
+    "translation": "With",
+    "transliteration": "maʿa",
+    "occurrences": "This occurs 187 times in the Qur'an."
+  },
+  {
+    "arabic": "فَوْقَ",
+    "translation": "Above",
+    "transliteration": "fawqa",
+    "occurrences": "This occurs 41 times in the Qur'an."
+  },
+  {
+    "arabic": "تَحْتَ",
+    "translation": "Under",
+    "transliteration": "taḥta",
+    "occurrences": "This occurs 31 times in the Qur'an."
+  },
+  {
+    "arabic": "لَدَىٰ",
+    "translation": "With / Near",
+    "transliteration": "laday",
+    "occurrences": "This occurs 16 times in the Qur'an."
+  },
+  {
+    "arabic": "بَيْنَ",
+    "translation": "Between",
+    "transliteration": "bayna",
+    "occurrences": "This occurs 379 times in the Qur'an."
+  },
+  {
+    "arabic": "رَسُولٌ",
+    "translation": "Messenger",
+    "transliteration": "rasūl",
+    "occurrences": "This occurs 332 times in the Qur'an."
+  },
+  {
+    "arabic": "نَبِيٌّ",
+    "translation": "Prophet",
+    "transliteration": "nabiyy",
+    "occurrences": "This occurs 75 times in the Qur'an."
+  },
+  {
+    "arabic": "عِبَادٌ",
+    "translation": "Slaves / Servants",
+    "transliteration": "ʿibād",
+    "occurrences": "This occurs 152 times in the Qur'an."
+  },
+  {
+    "arabic": "رَحِيمٌ",
+    "translation": "Merciful",
+    "transliteration": "raḥīm",
+    "occurrences": "This occurs 115 times in the Qur'an."
+  },
+  {
+    "arabic": "سَمِيعٌ",
+    "translation": "All-Hearing",
+    "transliteration": "samīʿ",
+    "occurrences": "This occurs 45 times in the Qur'an."
+  },
+  {
+    "arabic": "عَلِيمٌ",
+    "translation": "All-Knowing",
+    "transliteration": "ʿalīm",
+    "occurrences": "This occurs 162 times in the Qur'an."
+  },
+  {
+    "arabic": "بَصِيرٌ",
+    "translation": "All-Seeing",
+    "transliteration": "baṣīr",
+    "occurrences": "This occurs 42 times in the Qur'an."
+  },
+  {
+    "arabic": "خَبِيرٌ",
+    "translation": "All-Aware",
+    "transliteration": "khabīr",
+    "occurrences": "This occurs 45 times in the Qur'an."
+  },
+  {
+    "arabic": "غَفُورٌ",
+    "translation": "Most Forgiving",
+    "transliteration": "ghafūr",
+    "occurrences": "This occurs 91 times in the Qur'an."
+  },
+  {
+    "arabic": "شَكُورٌ",
+    "translation": "Most Appreciative",
+    "transliteration": "shakūr",
+    "occurrences": "This occurs 4 times in the Qur'an."
+  },
+  {
+    "arabic": "قَوِيٌّ",
+    "translation": "All-Strong",
+    "transliteration": "qawwiyy",
+    "occurrences": "This occurs 10 times in the Qur'an."
+  },
+  {
+    "arabic": "حَكِيمٌ",
+    "translation": "All-Wise",
+    "transliteration": "ḥakīm",
+    "occurrences": "This occurs 91 times in the Qur'an."
+  },
+  {
+    "arabic": "مَلِكٌ",
+    "translation": "King",
+    "transliteration": "malik",
+    "occurrences": "This occurs 5 times in the Qur'an."
+  },
+  {
+    "arabic": "وَاحِدٌ",
+    "translation": "One",
+    "transliteration": "wāḥid",
+    "occurrences": "This occurs 20 times in the Qur'an."
+  },
+  {
+    "arabic": "قُدُّوسٌ",
+    "translation": "Most Holy",
+    "transliteration": "quddūs",
+    "occurrences": "This occurs 2 times in the Qur'an."
+  },
+  {
+    "arabic": "سَلَامٌ",
+    "translation": "Peace / Source of Peace",
+    "transliteration": "salām",
+    "occurrences": "This occurs 42 times in the Qur'an."
+  },
+  {
+    "arabic": "مُؤْمِنٌ",
+    "translation": "Giver of Faith / Security",
+    "transliteration": "mu'min",
+    "occurrences": "This occurs 8 times in the Qur'an."
+  },
+  {
+    "arabic": "مُهَيْمِنٌ",
+    "translation": "All-Watcher",
+    "transliteration": "muhaymin",
+    "occurrences": "This occurs 1 time in the Qur'an."
+  },
+  {
+    "arabic": "عَزِيزٌ",
+    "translation": "All-Mighty",
+    "transliteration": "ʿazīz",
+    "occurrences": "This occurs 92 times in the Qur'an."
+  },
+  {
+    "arabic": "جَبَّارٌ",
+    "translation": "Compeller",
+    "transliteration": "jabbār",
+    "occurrences": "This occurs 10 times in the Qur'an."
+  },
+  {
+    "arabic": "مُتَكَبِّرٌ",
+    "translation": "Supremely Great",
+    "transliteration": "mutakabbir",
+    "occurrences": "This occurs 4 times in the Qur'an."
+  },
+  {
+    "arabic": "خَالِقٌ",
+    "translation": "Creator",
+    "transliteration": "khāliq",
+    "occurrences": "This occurs 8 times in the Qur'an."
+  },
+  {
+    "arabic": "بَارِئٌ",
+    "translation": "Maker",
+    "transliteration": "bāri’",
+    "occurrences": "This occurs 3 times in the Qur'an."
+  },
+  {
+    "arabic": "مُصَوِّرٌ",
+    "translation": "Fashioner",
+    "transliteration": "muṣawwir",
+    "occurrences": "This occurs 1 time in the Qur'an."
+  },
+  {
+    "arabic": "غَفَّارٌ",
+    "translation": "Oft-Forgiving",
+    "transliteration": "ghaffār",
+    "occurrences": "This occurs 5 times in the Qur'an."
+  },
+  {
+    "arabic": "قَهَّارٌ",
+    "translation": "Irresistible",
+    "transliteration": "qahhār",
+    "occurrences": "This occurs 6 times in the Qur'an."
+  },
+  {
+    "arabic": "وَهَّابٌ",
+    "translation": "Giver of Gifts",
+    "transliteration": "wahhāb",
+    "occurrences": "This occurs 3 times in the Qur'an."
+  },
+  {
+    "arabic": "رَزَّاقٌ",
+    "translation": "Provider",
+    "transliteration": "razzāq",
+    "occurrences": "This occurs 1 time in the Qur'an."
+  },
+  {
+    "arabic": "فَتَّاحٌ",
+    "translation": "Opener / Judge",
+    "transliteration": "fattāḥ",
+    "occurrences": "This occurs 1 time in the Qur'an."
+  },
+  {
+    "arabic": "عَلِيمٌ",
+    "translation": "All-Knowing",
+    "transliteration": "ʿalīm",
+    "occurrences": "This occurs 162 times in the Qur'an."
+  },
+  {
+    "arabic": "قَادِرٌ",
+    "translation": "Able / Powerful",
+    "transliteration": "qādir",
+    "occurrences": "This occurs 45 times in the Qur'an."
+  },
+  {
+    "arabic": "قَدِيرٌ",
+    "translation": "All-Able",
+    "transliteration": "qadīr",
+    "occurrences": "This occurs 45 times in the Qur'an."
+  },
+  {
+    "arabic": "مَقْدُورٌ",
+    "translation": "Decreed / Ordained",
+    "transliteration": "maqdūr",
+    "occurrences": "This occurs 2 times in the Qur'an."
+  },
+  {
+    "arabic": "قَاهِرٌ",
+    "translation": "Subduer",
+    "transliteration": "qāhir",
+    "occurrences": "This occurs 2 times in the Qur'an."
+  },
+  {
+    "arabic": "مُقْتَدِرٌ",
+    "translation": "All-Determining",
+    "transliteration": "muqtadir",
+    "occurrences": "This occurs 4 times in the Qur'an."
+  },
+  {
+    "arabic": "عَفُوٌّ",
+    "translation": "Most Pardoning",
+    "transliteration": "ʿafūw",
+    "occurrences": "This occurs 5 times in the Qur'an."
+  },
+  {
+    "arabic": "لَطِيفٌ",
+    "translation": "Most Subtle / Kind",
+    "transliteration": "laṭīf",
+    "occurrences": "This occurs 7 times in the Qur'an."
+  },
+  {
+    "arabic": "حَلِيمٌ",
+    "translation": "Most Forbearing",
+    "transliteration": "ḥalīm",
+    "occurrences": "This occurs 11 times in the Qur'an."
+  },
+  {
+    "arabic": "عَظِيمٌ",
+    "translation": "Most Great",
+    "transliteration": "ʿaẓīm",
+    "occurrences": "This occurs 14 times in the Qur'an."
+  },
+  {
+    "arabic": "غَنِيٌّ",
+    "translation": "Free of Need",
+    "transliteration": "ghanīyy",
+    "occurrences": "This occurs 18 times in the Qur'an."
+  },
+  {
+    "arabic": "كَرِيمٌ",
+    "translation": "Most Generous / Noble",
+    "transliteration": "karīm",
+    "occurrences": "This occurs 9 times in the Qur'an."
+  },
+  {
+    "arabic": "مُبِينٌ",
+    "translation": "Clear",
+    "transliteration": "mubīn",
+    "occurrences": "This occurs 24 times in the Qur'an."
+  },
+  {
+    "arabic": "حَقٌّ",
+    "translation": "Truth",
+    "transliteration": "ḥaqq",
+    "occurrences": "This occurs 227 times in the Qur'an."
+  },
+  {
+    "arabic": "بَاطِلٌ",
+    "translation": "Falsehood",
+    "transliteration": "bāṭil",
+    "occurrences": "This occurs 18 times in the Qur'an."
+  },
+  {
+    "arabic": "عَذَابٌ",
+    "translation": "Punishment",
+    "transliteration": "ʿadhāb",
+    "occurrences": "This occurs 320 times in the Qur'an."
+  },
+  {
+    "arabic": "نَارٌ",
+    "translation": "Fire",
+    "transliteration": "nār",
+    "occurrences": "This occurs 145 times in the Qur'an."
+  },
+  {
+    "arabic": "نُورٌ",
+    "translation": "Light",
+    "transliteration": "nūr",
+    "occurrences": "This occurs 43 times in the Qur'an."
+  },
+  {
+    "arabic": "جَنَّةٌ",
+    "translation": "Paradise / Garden",
+    "transliteration": "jannah",
+    "occurrences": "This occurs 147 times in the Qur'an."
+  },
+  {
+    "arabic": "نَهَارٌ",
+    "translation": "Daylight / Daytime",
+    "transliteration": "nahār",
+    "occurrences": "This occurs 55 times in the Qur'an."
+  },
+  {
+    "arabic": "لَيْلٌ",
+    "translation": "Night",
+    "transliteration": "layl",
+    "occurrences": "This occurs 92 times in the Qur'an."
+  },
+  {
+    "arabic": "دُنْيَا",
+    "translation": "This World",
+    "transliteration": "dunyā",
+    "occurrences": "This occurs 115 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلْآخِرَةُ",
+    "translation": "The Hereafter",
+    "transliteration": "al-ākhirah",
+    "occurrences": "This occurs 115 times in the Qur'an."
+  },
+  {
+    "arabic": "ذَٰلِكَ",
+    "translation": "That",
+    "transliteration": "dhālika",
+    "occurrences": "This occurs 529 times in the Qur'an."
+  },
+  {
+    "arabic": "هَٰذَا",
+    "translation": "This",
+    "transliteration": "hādhā",
+    "occurrences": "This occurs 369 times in the Qur'an."
+  },
+  {
+    "arabic": "هَٰؤُلَاءِ",
+    "translation": "These",
+    "transliteration": "hā’ulā’i",
+    "occurrences": "This occurs 41 times in the Qur'an."
+  },
+  {
+    "arabic": "تِلْكَ",
+    "translation": "That (feminine)",
+    "transliteration": "tilka",
+    "occurrences": "This occurs 60 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱللَّيْلَ",
+    "translation": "The Night",
+    "transliteration": "al-layl",
+    "occurrences": "This occurs 92 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلنَّهَارَ",
+    "translation": "The Day",
+    "transliteration": "an-nahār",
+    "occurrences": "This occurs 55 times in the Qur'an."
+  },
+  {
+    "arabic": "شَمْسٌ",
+    "translation": "Sun",
+    "transliteration": "shams",
+    "occurrences": "This occurs 33 times in the Qur'an."
+  },
+  {
+    "arabic": "قَمَرٌ",
+    "translation": "Moon",
+    "transliteration": "qamar",
+    "occurrences": "This occurs 27 times in the Qur'an."
+  },
+  {
+    "arabic": "نَبَأٌ",
+    "translation": "News",
+    "transliteration": "naba’",
+    "occurrences": "This occurs 80 times in the Qur'an."
+  },
+  {
+    "arabic": "قِصَّةٌ",
+    "translation": "Story",
+    "transliteration": "qiṣṣah",
+    "occurrences": "This occurs 20 times in the Qur'an."
+  },
+  {
+    "arabic": "خَبَرٌ",
+    "translation": "Information / Report",
+    "transliteration": "khabar",
+    "occurrences": "This occurs 14 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلْكِتَٰبُ",
+    "translation": "The Book",
+    "transliteration": "al-kitāb",
+    "occurrences": "This occurs 261 times in the Qur'an."
+  },
+  {
+    "arabic": "قُرْءَانٌ",
+    "translation": "Qur’an / Recitation",
+    "transliteration": "qur’ān",
+    "occurrences": "This occurs 70 times in the Qur'an."
+  },
+  {
+    "arabic": "ذِكْرٌ",
+    "translation": "Reminder / Mention",
+    "transliteration": "dhikr",
+    "occurrences": "This occurs 292 times in the Qur'an."
+  },
+  {
+    "arabic": "ٱلْفُرْقَانُ",
+    "translation": "Criterion",
+    "transliteration": "al-furqān",
+    "occurrences": "This occurs 7 times in the Qur'an."
+  },
+  {
+    "arabic": "حِكْمَةٌ",
+    "translation": "Wisdom",
+    "transliteration": "ḥikmah",
+    "occurrences": "This occurs 20 times in the Qur'an."
+  },
+  {
+    "arabic": "مَثَلٌ",
+    "translation": "Example / Parable",
+    "transliteration": "mathal",
+    "occurrences": "This occurs 70 times in the Qur'an."
+  },
+  {
+    "arabic": "شَيْءٌ",
+    "translation": "Thing",
+    "transliteration": "shay’",
+    "occurrences": "This occurs 513 times in the Qur'an."
+  },
+  {
+    "arabic": "أَمْرٌ",
+    "translation": "Command / Affair",
+    "transliteration": "amr",
+    "occurrences": "This occurs 253 times in the Qur'an."
+  },
+  {
+    "arabic": "نَهْيٌ",
+    "translation": "Prohibition",
+    "transliteration": "nahy",
+    "occurrences": "This occurs 12 times in the Qur'an."
+  },
+  {
+    "arabic": "وَعْدٌ",
+    "translation": "Promise",
+    "transliteration": "waʿd",
+    "occurrences": "This occurs 36 times in the Qur'an."
+  },
+  {
+    "arabic": "وَعِيدٌ",
+    "translation": "Threat / Warning",
+    "transliteration": "waʿīd",
+    "occurrences": "This occurs 10 times in the Qur'an."
+  },
+  {
+    "arabic": "عَهْدٌ",
+    "translation": "Covenant / Pledge",
+    "transliteration": "ʿahd",
+    "occurrences": "This occurs 46 times in the Qur'an."
+  }
+]
