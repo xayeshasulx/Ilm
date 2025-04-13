@@ -4,6 +4,7 @@
 //
 //  Created by Ayesha Suleman on 23/03/2025.
 //
+
 import SwiftUI
 
 struct FeedView: View {
@@ -21,56 +22,60 @@ struct FeedView: View {
                     ForEach(allVerses) { verse in
                         ZStack {
                             Color.white
+                                .ignoresSafeArea()
 
-                            VStack(spacing: 24) {
-                                VStack(spacing: 20) {
-                                    Text(verse.title)
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .multilineTextAlignment(.center)
+                            GeometryReader { innerGeo in
+                                VStack(spacing: 24) {
+                                    VStack(spacing: 20) {
+                                        Text(verse.title)
+                                            .font(.title3)
+                                            .fontWeight(.semibold)
+                                            .multilineTextAlignment(.center)
 
-                                    Text(verse.arabic)
-                                        .font(.title)
-                                        .multilineTextAlignment(.center)
+                                        Text(verse.arabic)
+                                            .font(.title)
+                                            .multilineTextAlignment(.center)
 
-                                    Text(verse.transliteration)
-                                        .italic()
-                                        .foregroundColor(.gray)
+                                        Text(verse.transliteration)
+                                            .italic()
+                                            .foregroundColor(.gray)
 
-                                    let isLong = verse.translation.count > 350
+                                        let isLong = verse.translation.count > 350
 
-                                    Group {
-                                        if isLong {
-                                            Text(verse.translation)
-                                                .font(.body)
-                                                .lineLimit(6)
-                                                .multilineTextAlignment(.leading)
+                                        Group {
+                                            if isLong {
+                                                Text(verse.translation)
+                                                    .font(.body)
+                                                    .lineLimit(6)
+                                                    .multilineTextAlignment(.leading)
 
-                                            Button("Expand") {
-                                                expandedVerse = verse
+                                                Button("Expand") {
+                                                    expandedVerse = verse
+                                                }
+                                                .font(.subheadline)
+                                                .foregroundColor(Color(hex: "722345"))
+                                            } else {
+                                                Text(verse.translation)
+                                                    .font(.body)
+                                                    .multilineTextAlignment(.leading)
                                             }
-                                            .font(.subheadline)
-                                            .foregroundColor(Color(hex: "722345"))
-                                        } else {
-                                            Text(verse.translation)
-                                                .font(.body)
-                                                .multilineTextAlignment(.leading)
                                         }
                                     }
+                                    .padding(.horizontal, 20)
                                 }
-                                .padding(.horizontal, 20)
-                                .padding(.top, 20)
-
-                                Spacer()
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .padding(.top, 56) // prevent content being hidden under top bar
+                                .padding(.bottom, 40) // extra breathing space
+                                .multilineTextAlignment(.center)
                             }
-                            .frame(height: geo.size.height - 56) // remove extra bottom space
                         }
+                        .frame(height: geo.size.height - 56) // Full screen minus header
                         .containerRelativeFrame(.vertical)
-                        .ignoresSafeArea()
                     }
                 }
             }
             .scrollTargetBehavior(.paging)
+            .ignoresSafeArea()
             .overlay(alignment: .top) {
                 ZStack {
                     Color(hex: "722345").ignoresSafeArea()
