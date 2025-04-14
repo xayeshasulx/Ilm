@@ -1,13 +1,13 @@
 //
-//  SurahListView.swift
+//  AyahInsightsSurahView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
 import SwiftUI
 
-struct KeyVersesSurahView: View {
-    @ObservedObject var viewModel = KeyVersesViewModel()
+struct AyahInsightsSurahView: View {
+    @ObservedObject var viewModel = AyahInsightsViewModel()
     @Environment(\.presentationMode) var presentationMode
     @FocusState private var isSearchFocused: Bool
     @State private var searchText = ""
@@ -83,7 +83,7 @@ struct KeyVersesSurahView: View {
                     // Surah Buttons
                     LazyVStack(spacing: 12) {
                         ForEach(filteredSurahs, id: \.self) { surah in
-                            NavigationLink(destination: KeyVersesGridView(surah: surah, verses: viewModel.verses(for: surah))) {
+                            NavigationLink(destination: AyahInsightsGridView(surah: surah, insights: viewModel.insights(for: surah))) {
                                 Text(surah)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(.black)
@@ -104,5 +104,6 @@ struct KeyVersesSurahView: View {
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 

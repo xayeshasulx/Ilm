@@ -1,14 +1,15 @@
 //
-//  PostsGridView.swift
+//  SurahOverviewGridView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
+
 import SwiftUI
 
-struct KeyVersesGridView: View {
+struct SurahOverviewGridView: View {
     let surah: String
-    let verses: [KeyVerse]
+    let overviews: [SurahOverview]
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -17,7 +18,6 @@ struct KeyVersesGridView: View {
             let itemWidth = geo.size.width / 3
 
             VStack(spacing: 0) {
-                // 🔝 Top Bar
                 ZStack(alignment: .bottom) {
                     Color(hex: "722345")
                         .ignoresSafeArea(edges: .top)
@@ -34,7 +34,7 @@ struct KeyVersesGridView: View {
 
                         Spacer()
 
-                        Text("Key Verses")
+                        Text("Surah Overviews")
                             .font(.title2)
                             .fontWeight(.semibold)
                             .foregroundColor(Color(hex: "D4B4AC"))
@@ -50,11 +50,10 @@ struct KeyVersesGridView: View {
                     .font(.subheadline)
                     .padding(.top, 10)
 
-                // 🔳 Grid of Verses
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(verses) { verse in
-                            verseGridItem(verse: verse, itemWidth: itemWidth)
+                        ForEach(overviews) { item in
+                            overviewGridItem(overview: item, itemWidth: itemWidth)
                         }
                     }
                 }
@@ -64,21 +63,14 @@ struct KeyVersesGridView: View {
         }
     }
 
-    // ✅ Break into subview for type-checking performance
     @ViewBuilder
-    private func verseGridItem(verse: KeyVerse, itemWidth: CGFloat) -> some View {
-        NavigationLink(destination: KeyVersesDetailView(verses: verses, selectedVerse: verse)) {
+    private func overviewGridItem(overview: SurahOverview, itemWidth: CGFloat) -> some View {
+        NavigationLink(destination: SurahOverviewDetailView(overviews: overviews, selectedOverview: overview)) {
             VStack(spacing: 0) {
-                Text(verse.title)
-                    .font(.caption2)
-                    .foregroundColor(.black)
-                    .lineLimit(1)
-                    .padding(4)
-
-                Text(verse.translation)
+                Text(overview.translation)
                     .font(.caption)
                     .foregroundColor(.gray)
-                    .lineLimit(4)
+                    .lineLimit(6)
                     .multilineTextAlignment(.center)
                     .padding(6)
             }
@@ -88,4 +80,3 @@ struct KeyVersesGridView: View {
         }
     }
 }
-

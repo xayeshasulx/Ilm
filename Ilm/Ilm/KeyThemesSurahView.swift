@@ -1,13 +1,13 @@
 //
-//  SurahListView.swift
+//  KeyThemesSurahView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
 import SwiftUI
 
-struct KeyVersesSurahView: View {
-    @ObservedObject var viewModel = KeyVersesViewModel()
+struct KeyThemesSurahView: View {
+    @ObservedObject var viewModel = KeyThemesViewModel()
     @Environment(\.presentationMode) var presentationMode
     @FocusState private var isSearchFocused: Bool
     @State private var searchText = ""
@@ -24,7 +24,7 @@ struct KeyVersesSurahView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // 🔴 Fixed Burgundy Top Bar Only
+            // 🔝 Top Bar
             ZStack(alignment: .bottom) {
                 Color(hex: "722345")
                     .ignoresSafeArea(edges: .top)
@@ -41,7 +41,7 @@ struct KeyVersesSurahView: View {
 
                     Spacer()
 
-                    Text("Key Verses")
+                    Text("Key Themes & Messages")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: "D4B4AC"))
@@ -54,10 +54,10 @@ struct KeyVersesSurahView: View {
             }
             .frame(height: 56)
 
-            // 📜 Scrollable Area (SearchBar + List)
+            // 📜 Scrollable Area
             ScrollView {
                 VStack(spacing: 12) {
-                    // 🔍 Search Bar inside scroll
+                    // 🔍 Search
                     HStack {
                         TextField("Search by Surah Name", text: $searchText)
                             .padding(.vertical, 8)
@@ -83,7 +83,7 @@ struct KeyVersesSurahView: View {
                     // Surah Buttons
                     LazyVStack(spacing: 12) {
                         ForEach(filteredSurahs, id: \.self) { surah in
-                            NavigationLink(destination: KeyVersesGridView(surah: surah, verses: viewModel.verses(for: surah))) {
+                            NavigationLink(destination: KeyThemesGridView(surah: surah, themes: viewModel.themes(for: surah))) {
                                 Text(surah)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(.black)
@@ -104,5 +104,4 @@ struct KeyVersesSurahView: View {
         .navigationBarBackButtonHidden(true)
     }
 }
-
 

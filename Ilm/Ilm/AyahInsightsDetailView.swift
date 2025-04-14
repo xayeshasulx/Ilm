@@ -1,16 +1,16 @@
 //
-//  PostDetailView.swift
+//  AyahInsightsDetailView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
 import SwiftUI
 
-struct KeyVersesDetailView: View {
-    let verses: [KeyVerse]
-    let selectedVerse: KeyVerse
+struct AyahInsightsDetailView: View {
+    let insights: [AyahInsight]
+    let selectedInsight: AyahInsight
     @Environment(\.presentationMode) var presentationMode
-    @State private var expandedVerse: KeyVerse?
+    @State private var expandedInsight: AyahInsight?
     @State private var currentIndex: Int = 0
 
     var body: some View {
@@ -18,42 +18,34 @@ struct KeyVersesDetailView: View {
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        ForEach(verses.indices, id: \.self) { index in
-                            let verse = verses[index]
+                        ForEach(insights.indices, id: \.self) { index in
+                            let insight = insights[index]
                             ZStack {
                                 Color.white.ignoresSafeArea()
 
                                 VStack(spacing: 24) {
                                     VStack(spacing: 20) {
-                                        Text(verse.title)
+                                        Text(insight.title)
                                             .font(.title3)
                                             .fontWeight(.semibold)
                                             .multilineTextAlignment(.center)
 
-                                        Text(verse.arabic)
-                                            .font(.title)
-                                            .multilineTextAlignment(.center)
-
-                                        Text(verse.transliteration)
-                                            .italic()
-                                            .foregroundColor(.gray)
-
-                                        let isLong = verse.translation.count > 350
+                                        let isLong = insight.translation.count > 350
 
                                         Group {
                                             if isLong {
-                                                Text(verse.translation)
+                                                Text(insight.translation)
                                                     .font(.body)
                                                     .lineLimit(6)
                                                     .multilineTextAlignment(.leading)
 
                                                 Button("Expand") {
-                                                    expandedVerse = verse
+                                                    expandedInsight = insight
                                                 }
                                                 .font(.subheadline)
                                                 .foregroundColor(Color(hex: "722345"))
                                             } else {
-                                                Text(verse.translation)
+                                                Text(insight.translation)
                                                     .font(.body)
                                                     .multilineTextAlignment(.leading)
                                             }
@@ -72,7 +64,7 @@ struct KeyVersesDetailView: View {
                     }
                     .scrollTargetLayout()
                     .onAppear {
-                        if let selectedIndex = verses.firstIndex(of: selectedVerse) {
+                        if let selectedIndex = insights.firstIndex(of: selectedInsight) {
                             currentIndex = selectedIndex
                             proxy.scrollTo(currentIndex, anchor: .top)
                         }
@@ -95,7 +87,7 @@ struct KeyVersesDetailView: View {
 
                             Spacer()
 
-                            Text("Key Verses")
+                            Text("Ayah Insights")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(hex: "D4B4AC"))
@@ -107,8 +99,8 @@ struct KeyVersesDetailView: View {
                     }
                     .frame(height: 56)
                 }
-                .sheet(item: $expandedVerse) { verse in
-                    FullVerseView(verse: verse)
+                .sheet(item: $expandedInsight) { insight in
+                    FullInsightsView(insight: insight)
                 }
             }
         }
@@ -117,18 +109,23 @@ struct KeyVersesDetailView: View {
     }
 }
 
-struct FullVerseView: View {
-    let verse: KeyVerse
-    @Environment(\.dismiss) var dismiss
+import SwiftUI
+
+struct FullInsightsView: View {
+    let insight: AyahInsight
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 0) {
+            // 🔝 Top Bar
             ZStack(alignment: .bottom) {
                 Color(hex: "722345").ignoresSafeArea(edges: .top)
 
                 HStack {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.left")
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
                             .font(.title2)
                             .foregroundColor(.white)
                     }
@@ -136,7 +133,7 @@ struct FullVerseView: View {
 
                     Spacer()
 
-                    Text("Full Verse")
+                    Text("Full Ayah Insight")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: "D4B4AC"))
@@ -148,23 +145,21 @@ struct FullVerseView: View {
             }
             .frame(height: 56)
 
+            // 📝 Content
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text(verse.title).font(.title3).bold()
-                    Text(verse.arabic).font(.title)
-                    Text(verse.transliteration).italic().foregroundColor(.gray)
-                    Text(verse.translation)
+                VStack(alignment: .leading, spacing: 24) {
+                    Text(insight.title)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+
+                    Text(insight.translation)
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
+                .padding(20)
             }
         }
     }
 }
-
-
-
-
-
-
-
 

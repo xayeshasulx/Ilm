@@ -1,18 +1,18 @@
 //
-//  KeyThemesView.swift
+//  SurahOverviewView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 08/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
 
 import Foundation
 
-struct KeyThemePost: Codable {
+struct SurahOverviewPost: Codable {
     let surah: String
-    let posts: [KeyTheme]
+    let posts: [SurahOverview]
 }
 
-struct KeyTheme: Codable, Identifiable, Equatable, Hashable {
+struct SurahOverview: Codable, Identifiable, Equatable, Hashable {
     var id = UUID()
     let translation: String
 
@@ -29,7 +29,8 @@ struct KeyTheme: Codable, Identifiable, Equatable, Hashable {
         self.translation = translation
     }
 
-    static func == (lhs: KeyTheme, rhs: KeyTheme) -> Bool {
+    static func == (lhs: SurahOverview, rhs: SurahOverview) -> Bool {
         lhs.translation == rhs.translation
     }
 }
+

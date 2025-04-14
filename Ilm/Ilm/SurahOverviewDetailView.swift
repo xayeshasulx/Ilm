@@ -1,16 +1,17 @@
 //
-//  PostDetailView.swift
+//  SurahOverviewDetailView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
+
 import SwiftUI
 
-struct KeyVersesDetailView: View {
-    let verses: [KeyVerse]
-    let selectedVerse: KeyVerse
+struct SurahOverviewDetailView: View {
+    let overviews: [SurahOverview]
+    let selectedOverview: SurahOverview
     @Environment(\.presentationMode) var presentationMode
-    @State private var expandedVerse: KeyVerse?
+    @State private var expandedOverview: SurahOverview?
     @State private var currentIndex: Int = 0
 
     var body: some View {
@@ -18,50 +19,34 @@ struct KeyVersesDetailView: View {
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        ForEach(verses.indices, id: \.self) { index in
-                            let verse = verses[index]
+                        ForEach(overviews.indices, id: \.self) { index in
+                            let overview = overviews[index]
                             ZStack {
                                 Color.white.ignoresSafeArea()
 
                                 VStack(spacing: 24) {
-                                    VStack(spacing: 20) {
-                                        Text(verse.title)
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .multilineTextAlignment(.center)
+                                    let isLong = overview.translation.count > 350
 
-                                        Text(verse.arabic)
-                                            .font(.title)
-                                            .multilineTextAlignment(.center)
+                                    Group {
+                                        if isLong {
+                                            Text(overview.translation)
+                                                .font(.body)
+                                                .lineLimit(6)
+                                                .multilineTextAlignment(.leading)
 
-                                        Text(verse.transliteration)
-                                            .italic()
-                                            .foregroundColor(.gray)
-
-                                        let isLong = verse.translation.count > 350
-
-                                        Group {
-                                            if isLong {
-                                                Text(verse.translation)
-                                                    .font(.body)
-                                                    .lineLimit(6)
-                                                    .multilineTextAlignment(.leading)
-
-                                                Button("Expand") {
-                                                    expandedVerse = verse
-                                                }
-                                                .font(.subheadline)
-                                                .foregroundColor(Color(hex: "722345"))
-                                            } else {
-                                                Text(verse.translation)
-                                                    .font(.body)
-                                                    .multilineTextAlignment(.leading)
+                                            Button("Expand") {
+                                                expandedOverview = overview
                                             }
+                                            .font(.subheadline)
+                                            .foregroundColor(Color(hex: "722345"))
+                                        } else {
+                                            Text(overview.translation)
+                                                .font(.body)
+                                                .multilineTextAlignment(.leading)
                                         }
                                     }
                                     .padding(.horizontal, 20)
                                 }
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .padding(.top, 56)
                                 .padding(.bottom, 40)
                             }
@@ -72,7 +57,7 @@ struct KeyVersesDetailView: View {
                     }
                     .scrollTargetLayout()
                     .onAppear {
-                        if let selectedIndex = verses.firstIndex(of: selectedVerse) {
+                        if let selectedIndex = overviews.firstIndex(of: selectedOverview) {
                             currentIndex = selectedIndex
                             proxy.scrollTo(currentIndex, anchor: .top)
                         }
@@ -95,7 +80,7 @@ struct KeyVersesDetailView: View {
 
                             Spacer()
 
-                            Text("Key Verses")
+                            Text("Surah Overviews")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(hex: "D4B4AC"))
@@ -107,8 +92,8 @@ struct KeyVersesDetailView: View {
                     }
                     .frame(height: 56)
                 }
-                .sheet(item: $expandedVerse) { verse in
-                    FullVerseView(verse: verse)
+                .sheet(item: $expandedOverview) { overview in
+                    FullSurahOverviewView(overview: overview)
                 }
             }
         }
@@ -117,18 +102,21 @@ struct KeyVersesDetailView: View {
     }
 }
 
-struct FullVerseView: View {
-    let verse: KeyVerse
-    @Environment(\.dismiss) var dismiss
+
+struct FullSurahOverviewView: View {
+    let overview: SurahOverview
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 0) {
             ZStack(alignment: .bottom) {
                 Color(hex: "722345").ignoresSafeArea(edges: .top)
 
                 HStack {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.left")
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
                             .font(.title2)
                             .foregroundColor(.white)
                     }
@@ -136,7 +124,7 @@ struct FullVerseView: View {
 
                     Spacer()
 
-                    Text("Full Verse")
+                    Text("Full Surah Overview")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: "D4B4AC"))
@@ -149,22 +137,13 @@ struct FullVerseView: View {
             .frame(height: 56)
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text(verse.title).font(.title3).bold()
-                    Text(verse.arabic).font(.title)
-                    Text(verse.transliteration).italic().foregroundColor(.gray)
-                    Text(verse.translation)
+                VStack(alignment: .leading, spacing: 24) {
+                    Text(overview.translation)
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
+                .padding(20)
             }
         }
     }
 }
-
-
-
-
-
-
-
-

@@ -1,16 +1,16 @@
 //
-//  PostDetailView.swift
+//  KeyThemesDetailView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
 import SwiftUI
 
-struct KeyVersesDetailView: View {
-    let verses: [KeyVerse]
-    let selectedVerse: KeyVerse
+struct KeyThemesDetailView: View {
+    let themes: [KeyTheme]
+    let selectedTheme: KeyTheme
     @Environment(\.presentationMode) var presentationMode
-    @State private var expandedVerse: KeyVerse?
+    @State private var expandedTheme: KeyTheme?
     @State private var currentIndex: Int = 0
 
     var body: some View {
@@ -18,42 +18,29 @@ struct KeyVersesDetailView: View {
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        ForEach(verses.indices, id: \.self) { index in
-                            let verse = verses[index]
+                        ForEach(themes.indices, id: \.self) { index in
+                            let theme = themes[index]
                             ZStack {
                                 Color.white.ignoresSafeArea()
 
                                 VStack(spacing: 24) {
                                     VStack(spacing: 20) {
-                                        Text(verse.title)
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .multilineTextAlignment(.center)
-
-                                        Text(verse.arabic)
-                                            .font(.title)
-                                            .multilineTextAlignment(.center)
-
-                                        Text(verse.transliteration)
-                                            .italic()
-                                            .foregroundColor(.gray)
-
-                                        let isLong = verse.translation.count > 350
+                                        let isLong = theme.translation.count > 350
 
                                         Group {
                                             if isLong {
-                                                Text(verse.translation)
+                                                Text(theme.translation)
                                                     .font(.body)
                                                     .lineLimit(6)
                                                     .multilineTextAlignment(.leading)
 
                                                 Button("Expand") {
-                                                    expandedVerse = verse
+                                                    expandedTheme = theme
                                                 }
                                                 .font(.subheadline)
                                                 .foregroundColor(Color(hex: "722345"))
                                             } else {
-                                                Text(verse.translation)
+                                                Text(theme.translation)
                                                     .font(.body)
                                                     .multilineTextAlignment(.leading)
                                             }
@@ -72,7 +59,7 @@ struct KeyVersesDetailView: View {
                     }
                     .scrollTargetLayout()
                     .onAppear {
-                        if let selectedIndex = verses.firstIndex(of: selectedVerse) {
+                        if let selectedIndex = themes.firstIndex(of: selectedTheme) {
                             currentIndex = selectedIndex
                             proxy.scrollTo(currentIndex, anchor: .top)
                         }
@@ -95,7 +82,7 @@ struct KeyVersesDetailView: View {
 
                             Spacer()
 
-                            Text("Key Verses")
+                            Text("Key Themes & Messages")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(hex: "D4B4AC"))
@@ -107,8 +94,8 @@ struct KeyVersesDetailView: View {
                     }
                     .frame(height: 56)
                 }
-                .sheet(item: $expandedVerse) { verse in
-                    FullVerseView(verse: verse)
+                .sheet(item: $expandedTheme) { theme in
+                    FullThemeView(theme: theme)
                 }
             }
         }
@@ -117,12 +104,15 @@ struct KeyVersesDetailView: View {
     }
 }
 
-struct FullVerseView: View {
-    let verse: KeyVerse
+import SwiftUI
+
+struct FullThemeView: View {
+    let theme: KeyTheme
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 0) {
+            // 🔝 Top Bar
             ZStack(alignment: .bottom) {
                 Color(hex: "722345").ignoresSafeArea(edges: .top)
 
@@ -136,7 +126,7 @@ struct FullVerseView: View {
 
                     Spacer()
 
-                    Text("Full Verse")
+                    Text("Full Key Themes & Messages")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: "D4B4AC"))
@@ -148,23 +138,16 @@ struct FullVerseView: View {
             }
             .frame(height: 56)
 
+            // 📜 Full Content
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(verse.title).font(.title3).bold()
-                    Text(verse.arabic).font(.title)
-                    Text(verse.transliteration).italic().foregroundColor(.gray)
-                    Text(verse.translation)
+                    Text(theme.translation)
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
                 }
                 .padding()
             }
         }
     }
 }
-
-
-
-
-
-
-
 

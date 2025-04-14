@@ -44,14 +44,14 @@ struct HomeView: View {
                                 spacing: 20
                             ) {
                                 HomeGridButton(title: "Key Verses", destination: AnyView(KeyVersesSurahView()), isIpad: isIpad)
-                                HomeGridButton(title: "Key Themes & Messages", destination: AnyView(KeyThemesView()), isIpad: isIpad)
-                                HomeGridButton(title: "Surah Summary", destination: AnyView(SurahSummaries()), isIpad: isIpad)
-                                HomeGridButton(title: "Quranic Supplications", destination: AnyView(Supplications()), isIpad: isIpad)
+                                HomeGridButton(title: "Key Themes & Messages", destination: AnyView(KeyThemesSurahView()), isIpad: isIpad)
+                                HomeGridButton(title: "Ayah Insights", destination: AnyView(AyahInsightsSurahView()), isIpad: isIpad)
+                                HomeGridButton(title: "Quranic Supplications", destination: AnyView(Supplications()),    isIpad: isIpad)
                                 HomeGridButton(title: "Arabic Words", destination: AnyView(ArabicWords()), isIpad: isIpad)
-                                HomeGridButton(title: "Surah Insights", destination: AnyView(SurahInsights()), isIpad: isIpad)
+                                HomeGridButton(title: "Surah Overviews", destination: AnyView(SurahOverviewSurahView()), isIpad: isIpad)
                             }
                             .padding(.horizontal)
-                        }
+                        }   
                         .padding(.top, 20)
                         .padding(.bottom, 40)
                     }
@@ -165,5 +165,7 @@ struct HomeGridButton: View {
     }
 }
 
-
+#Preview {
+    HomeView()
+}
 

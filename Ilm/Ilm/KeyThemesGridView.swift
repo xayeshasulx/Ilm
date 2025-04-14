@@ -1,14 +1,15 @@
 //
-//  PostsGridView.swift
+//  KeyThemesGridView.swift
 //  Ilm
 //
-//  Created by Ayesha Suleman on 10/04/2025.
+//  Created by Ayesha Suleman on 14/04/2025.
 //
+
 import SwiftUI
 
-struct KeyVersesGridView: View {
+struct KeyThemesGridView: View {
     let surah: String
-    let verses: [KeyVerse]
+    let themes: [KeyTheme]
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -34,7 +35,7 @@ struct KeyVersesGridView: View {
 
                         Spacer()
 
-                        Text("Key Verses")
+                        Text("Key Themes & Messages")
                             .font(.title2)
                             .fontWeight(.semibold)
                             .foregroundColor(Color(hex: "D4B4AC"))
@@ -50,11 +51,11 @@ struct KeyVersesGridView: View {
                     .font(.subheadline)
                     .padding(.top, 10)
 
-                // 🔳 Grid of Verses
+                // 🔳 Grid of Themes
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(verses) { verse in
-                            verseGridItem(verse: verse, itemWidth: itemWidth)
+                        ForEach(themes) { theme in
+                            themeGridItem(theme: theme, itemWidth: itemWidth)
                         }
                     }
                 }
@@ -64,21 +65,15 @@ struct KeyVersesGridView: View {
         }
     }
 
-    // ✅ Break into subview for type-checking performance
+    // ✅ Grid Item View
     @ViewBuilder
-    private func verseGridItem(verse: KeyVerse, itemWidth: CGFloat) -> some View {
-        NavigationLink(destination: KeyVersesDetailView(verses: verses, selectedVerse: verse)) {
+    private func themeGridItem(theme: KeyTheme, itemWidth: CGFloat) -> some View {
+        NavigationLink(destination: KeyThemesDetailView(themes: themes, selectedTheme: theme)) {
             VStack(spacing: 0) {
-                Text(verse.title)
-                    .font(.caption2)
-                    .foregroundColor(.black)
-                    .lineLimit(1)
-                    .padding(4)
-
-                Text(verse.translation)
+                Text(theme.translation)
                     .font(.caption)
                     .foregroundColor(.gray)
-                    .lineLimit(4)
+                    .lineLimit(6)
                     .multilineTextAlignment(.center)
                     .padding(6)
             }
@@ -88,4 +83,3 @@ struct KeyVersesGridView: View {
         }
     }
 }
-
