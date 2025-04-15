@@ -17,8 +17,6 @@ struct WeeklyChallengeView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: 120)
-                .border(Color.red) // debug border
-                .background(Color.yellow.opacity(0.3))
                 .padding()
         }
     }

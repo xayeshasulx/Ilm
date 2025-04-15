@@ -46,13 +46,13 @@ struct HomeView: View {
                                 HomeGridButton(title: "Key Verses", destination: AnyView(KeyVersesSurahView()), isIpad: isIpad)
                                 HomeGridButton(title: "Key Themes & Messages", destination: AnyView(KeyThemesSurahView()), isIpad: isIpad)
                                 HomeGridButton(title: "Ayah Insights", destination: AnyView(AyahInsightsSurahView()), isIpad: isIpad)
-                                HomeGridButton(title: "Quranic Supplications", destination: AnyView(Supplications()),    isIpad: isIpad)
+                                HomeGridButton(title: "Quranic Supplications", destination: AnyView(QuranicSupplicationsGridView()),    isIpad: isIpad)
                                 HomeGridButton(title: "Arabic Words", destination: AnyView(ArabicWords()), isIpad: isIpad)
                                 HomeGridButton(title: "Surah Overviews", destination: AnyView(SurahOverviewSurahView()), isIpad: isIpad)
                             }
                             .padding(.horizontal)
                         }   
-                        .padding(.top, 20)
+                        .padding(.top, 30)
                         .padding(.bottom, 40)
                     }
                 }
@@ -76,7 +76,7 @@ struct HomeView: View {
 
                     VStack(spacing: isIpad ? 20 : 10) {
                         Text(verse.arabic)
-                            .font(.system(size: isIpad ? 42 : 22))
+                            .font(.system(size: isIpad ? 32 : 22))
                             .foregroundColor(Color(hex: "D4B4AC"))
                             .multilineTextAlignment(.center)
 
@@ -99,7 +99,7 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .padding(.bottom, isIpad ? 60 : 20)
+        .padding(.bottom, isIpad ? 90 : 60)
         .background(Color(hex: "722345").ignoresSafeArea(edges: .top))
     }
 

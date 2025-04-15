@@ -14,16 +14,55 @@ struct FeedView: View {
 
     @State private var shuffledFeed: [FeedItem] = []
     @State private var expandedItem: FeedItem?
-    @State private var currentIndex: Int = 0
-    @State private var itemOffsets: [Int: CGFloat] = [:]
-
-    let topBarHeight: CGFloat = 56
-    let labelBarHeight: CGFloat = 64
 
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing: 0) {
-                // 🔝 Top Bar
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: 0) {
+                    ForEach(shuffledFeed.indices, id: \.self) { index in
+                        let item = shuffledFeed[index]
+
+                        ZStack {
+                            Color.white.ignoresSafeArea()
+
+                            GeometryReader { innerGeo in
+                                VStack(spacing: 24) {
+                                    // 🏷️ Category + Surah (TOP AREA UNDER NAV)
+                                    VStack(spacing: 4) {
+                                        Text(item.categoryLabel)
+                                            .font(.headline)
+                                            .foregroundColor(Color(hex: "A46A79"))
+                                            .fontWeight(.medium)
+
+                                        Text(item.surahName)
+                                            .font(.subheadline)
+                                            .foregroundColor(Color(hex: "A46A79"))
+                                    }
+
+                                    // 📝 Content Block
+                                    if let verse = item.keyVerse {
+                                        verseView(verse)
+                                    } else if let insight = item.ayahInsight {
+                                        insightView(insight)
+                                    } else {
+                                        textBlock(item.plainText)
+                                    }
+                                }
+                                .padding(.horizontal, 20)
+                                .padding(.top, 56) // height of top nav bar
+                                .padding(.bottom, 40)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            }
+                        }
+                        .frame(height: geo.size.height - 56) // full screen minus nav bar
+                        .containerRelativeFrame(.vertical)
+                    }
+                }
+            }
+            .scrollTargetBehavior(.paging)
+            .ignoresSafeArea()
+            .overlay(alignment: .top) {
+                // 🔝 NAV BAR
                 ZStack {
                     Color(hex: "722345").ignoresSafeArea()
                     HStack {
@@ -46,119 +85,52 @@ struct FeedView: View {
                     }
                     .padding(.vertical, 8)
                 }
-                .frame(height: topBarHeight)
-
-                // 🏷️ Category + Surah
-                if shuffledFeed.indices.contains(currentIndex) {
-                    let current = shuffledFeed[currentIndex]
-                    VStack(spacing: 4) {
-                        Text(current.categoryLabel)
-                            .font(.caption)
-                            .foregroundColor(Color(hex: "722345"))
-                            .fontWeight(.medium)
-                        Text(current.surahName)
-                            .font(.subheadline)
-                            .foregroundColor(.black)
-                    }
-                    .frame(height: labelBarHeight)
-                } else {
-                    Color.clear.frame(height: labelBarHeight)
-                }
-
-                // 🔄 Scrollable Feed
-                ScrollViewReader { proxy in
-                    ScrollView(.vertical, showsIndicators: false) {
-                        LazyVStack(spacing: 0) {
-                            ForEach(shuffledFeed.indices, id: \.self) { index in
-                                let item = shuffledFeed[index]
-
-                                ZStack {
-                                    Color.white.ignoresSafeArea()
-
-                                    VStack(spacing: 24) {
-                                        if let verse = item.keyVerse {
-                                            verseView(verse)
-                                        } else {
-                                            textBlock(item.plainText)
-                                        }
-                                    }
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 40)
-                                }
-                                .frame(height: geo.size.height - topBarHeight - labelBarHeight)
-                                .containerRelativeFrame(.vertical)
-                                .background(
-                                    GeometryReader { geo in
-                                        Color.clear
-                                            .preference(key: FeedIndexPreferenceKey.self, value: [index: geo.frame(in: .global).minY])
-                                    }
-                                )
-                                .id(index)
-                            }
-                        }
-                        .scrollTargetLayout()
-                        .onPreferenceChange(FeedIndexPreferenceKey.self) { offsets in
-                            itemOffsets = offsets
-                            updateCurrentIndex(screenMidY: geo.frame(in: .global).midY)
-                        }
-                    }
-                    .scrollTargetBehavior(.paging)
-                    .onAppear {
-                        generateShuffledFeed()
-                        proxy.scrollTo(0)
-                        currentIndex = 0
-                    }
-                    .onChange(of: shuffledFeed) {
-                        if !shuffledFeed.isEmpty {
-                            proxy.scrollTo(0)
-                            currentIndex = 0
-                        }
-                    }
-                }
+                .frame(height: 56)
             }
-        }
-        .sheet(item: $expandedItem) { item in
-            if let verse = item.keyVerse {
-                FullVerseView(verse: verse)
-            } else {
-                FullTextView(title: item.categoryLabel, text: item.plainText)
+            .onAppear(perform: generateShuffledFeed)
+            .sheet(item: $expandedItem) { item in
+                if let verse = item.keyVerse {
+                    FullVerseView(verse: verse)
+                } else {
+                    FullTextView(title: item.categoryLabel, text: item.plainText)
+                }
             }
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
 
-    private func updateCurrentIndex(screenMidY: CGFloat) {
-        let closest = itemOffsets.min(by: {
-            abs($0.value - screenMidY) < abs($1.value - screenMidY)
-        })?.key ?? 0
-
-        if closest != currentIndex {
-            currentIndex = closest
-        }
-    }
-
     func generateShuffledFeed() {
         var allItems: [FeedItem] = []
 
         for post in keyVersesVM.allSurahs {
-            allItems += post.posts.map { FeedItem(keyVerse: $0, surahName: post.surah, categoryLabel: "Key Verses") }
+            allItems += post.posts.map {
+                FeedItem(keyVerse: $0, surahName: post.surah, categoryLabel: "Key Verses")
+            }
         }
 
         for post in ayahInsightsVM.allSurahs {
-            allItems += post.posts.map { FeedItem(ayahInsight: $0, surahName: post.surah, categoryLabel: "Ayah Insights") }
+            allItems += post.posts.map {
+                FeedItem(ayahInsight: $0, surahName: post.surah, categoryLabel: "Ayah Insights")
+            }
         }
 
         for post in keyThemesVM.allSurahs {
-            allItems += post.posts.map { FeedItem(keyTheme: $0, surahName: post.surah, categoryLabel: "Key Themes & Messages") }
+            allItems += post.posts.map {
+                FeedItem(keyTheme: $0, surahName: post.surah, categoryLabel: "Key Themes & Messages")
+            }
         }
 
         for post in surahOverviewVM.allSurahs {
-            allItems += post.posts.map { FeedItem(surahOverview: $0, surahName: post.surah, categoryLabel: "Surah Overview") }
+            allItems += post.posts.map {
+                FeedItem(surahOverview: $0, surahName: post.surah, categoryLabel: "Surah Overview")
+            }
         }
 
         shuffledFeed = allItems.shuffled()
     }
+
+    // MARK: - VIEWS
 
     @ViewBuilder
     func verseView(_ verse: KeyVerse) -> some View {
@@ -176,24 +148,48 @@ struct FeedView: View {
                 .italic()
                 .foregroundColor(.gray)
 
-            let isLong = verse.translation.count > 350
-            Group {
-                if isLong {
-                    Text(verse.translation)
-                        .font(.body)
-                        .lineLimit(6)
-                        .multilineTextAlignment(.leading)
+            if verse.translation.count > 350 {
+                Text(verse.translation)
+                    .font(.body)
+                    .lineLimit(6)
+                    .multilineTextAlignment(.leading)
 
-                    Button("Expand") {
-                        expandedItem = FeedItem(keyVerse: verse)
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(Color(hex: "722345"))
-                } else {
-                    Text(verse.translation)
-                        .font(.body)
-                        .multilineTextAlignment(.leading)
+                Button("Expand") {
+                    expandedItem = FeedItem(keyVerse: verse)
                 }
+                .font(.subheadline)
+                .foregroundColor(Color(hex: "722345"))
+            } else {
+                Text(verse.translation)
+                    .font(.body)
+                    .multilineTextAlignment(.leading)
+            }
+        }
+    }
+
+    @ViewBuilder
+    func insightView(_ insight: AyahInsight) -> some View {
+        VStack(spacing: 20) {
+            Text(insight.title)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.center)
+
+            if insight.translation.count > 350 {
+                Text(insight.translation)
+                    .font(.body)
+                    .lineLimit(6)
+                    .multilineTextAlignment(.leading)
+
+                Button("Expand") {
+                    expandedItem = FeedItem(ayahInsight: insight)
+                }
+                .font(.subheadline)
+                .foregroundColor(Color(hex: "722345"))
+            } else {
+                Text(insight.translation)
+                    .font(.body)
+                    .multilineTextAlignment(.leading)
             }
         }
     }
@@ -222,6 +218,7 @@ struct FeedView: View {
     }
 }
 
+
 // MARK: - FeedItem
 
 struct FeedItem: Identifiable, Equatable {
@@ -249,7 +246,8 @@ struct FeedItem: Identifiable, Equatable {
     }
 }
 
-// MARK: - Offset PreferenceKey
+
+// MARK: - FeedIndexPreferenceKey
 
 struct FeedIndexPreferenceKey: PreferenceKey {
     static var defaultValue: [Int: CGFloat] = [:]
@@ -259,24 +257,20 @@ struct FeedIndexPreferenceKey: PreferenceKey {
 }
 
 
-
-
-
-
-
 struct FullTextView: View {
     var title: String
     var text: String
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack(spacing: 0) {
+            // 🔝 Top Bar
             ZStack(alignment: .bottom) {
                 Color(hex: "722345").ignoresSafeArea(edges: .top)
 
                 HStack {
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark")
                             .font(.title2)
@@ -286,7 +280,7 @@ struct FullTextView: View {
 
                     Spacer()
 
-                    Text(title)
+                    Text("Full Text")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: "D4B4AC"))
@@ -298,15 +292,19 @@ struct FullTextView: View {
             }
             .frame(height: 56)
 
+            // 📝 Content
             ScrollView {
-                Text(text)
-                    .font(.body)
-                    .multilineTextAlignment(.leading)
-                    .padding()
+                VStack(alignment: .leading, spacing: 24) {
+                    Text(text)
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(20)
             }
         }
     }
 }
+
 
 
 #Preview {
